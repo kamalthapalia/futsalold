@@ -1,0 +1,28 @@
+.dark{
+    background-color: black;
+    height: 4000px;
+}
+.book-date-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.book-open{
+    border: 1px solid var(--acd);
+    border-radius: 2px;
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    padding:10px 5px 10px 5px;
+    transition: 100ms;
+    user-select: none;
+    font-weight: bold;
+}
+.book-open:hover{
+    background-color: var(--acd);
+    color:#fff;
+}
+.book-open:active{
+    transform: scale(1.009);
+}

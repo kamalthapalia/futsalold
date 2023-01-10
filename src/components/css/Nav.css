@@ -1,0 +1,37 @@
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--acd);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  color: var(--bg);
+}
+.menu{
+    margin: 10px 15px 10px 0px;
+    user-select: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.menu:hover{
+  background-color: var(--ac);
+}
+.menu:active{
+  transform:scale(1.005);
+}
+.menu-left {
+  display: flex;justify-content: left;
+  overflow: hidden;
+}
+
+.nav-logo{
+  padding: 2px 30px 2px 30px ;
+  text-transform: uppercase;
+  color: var(--bg);
+  text-decoration: none;
+}
+.nav-logo:hover{
+color: var(--bg);
+}

@@ -1,0 +1,39 @@
+.rev-btm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.rev-card{
+    width: 400px;
+    border-radius: 15px;
+    border: 1px solid var(--bgd);
+    background-color: var(--acd);  
+
+
+}
+.rev-img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 80px;
+    margin: 3px;
+}
+.rev-text{
+    padding: 20px 20px 10px 20px;
+    background-color: var(--bg);
+    border-radius: 15px 15px 0px 0px;
+    color: var(--bgd);
+    font-weight: 500;
+}
+.rev-name{
+    color: var(--bg) ;
+    font-weight: bolder;
+    padding: 20px;
+    font-size: larger;
+}
+.rev-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

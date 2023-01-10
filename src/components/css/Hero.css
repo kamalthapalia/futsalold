@@ -1,0 +1,32 @@
+.hero {
+  position: relative;
+  height: 600px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://files.catbox.moe/fckjyj.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+.hero-bts{
+  background-color: var(--acd);
+  padding: 15px 43px 15px 43px;
+  border: none;
+  user-select: none;
+  cursor: pointer !important;
+  color: var(--bg);
+  transform: 400ms;
+}
+.hero-bts:hover{
+  background-color: var(--ac);
+}
+.hero-bts:active{
+  transform:scale(1.005);
+}
