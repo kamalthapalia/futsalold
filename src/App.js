@@ -11,7 +11,6 @@ import { Routes, Route , Navigate } from "react-router-dom";
 
 function App() {
   let loggedIn = false;
-  
   return (
     <div className="App">
       <Nav />
