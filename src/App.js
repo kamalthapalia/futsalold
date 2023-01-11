@@ -7,28 +7,40 @@ import { Book } from "./components/Book";
 import { Profile } from "./components/Profile";
 import { Signup } from "./components/Signup";
 import Admin from "./pages/Admin";
-import { Routes, Route , Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Login } from "./components/Login";
 
 function App() {
+  const token = localStorage.getItem("token");
+
   let loggedIn = false;
+  token=="admin"?loggedIn =true : loggedIn = false;
+  useEffect(() => {
+    console.log(token);
+  }, []);
+  if (loggedIn)
+    return (
+      <Routes>
+        <Route path="/" element={<Admin />}>
+          <Route path="/" element={<Signup />} />
+          <Route path="/dashboard" element={<Signup />} />
+
+          <Route path="/another" element={<Profile />} />
+          <Route path="*" element={<Navigate to={"/"} />} />
+        </Route>
+      </Routes>
+    );
   return (
     <div className="App">
       <Nav />
       <Hero />
       <Book />
       <Profile />
-      <Reviews/>
+      <Reviews />
+      <Login />
       <Signup />
 
-      {/* <Routes>
-        <Route path="/" element={<Admin />} >
-          <Route path="/" element={<Signup />} />
-          <Route path="/dashboard" element={<Signup />} />
-
-          <Route path="/another" element={<Profile />} />
-          <Route path="*" element={<Navigate to={'/'}/> } />
-        </Route>
-      </Routes> */}
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.input{
+    width: 75%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--bgd);
+  margin-top: 0px;
+  background-color: var(--bg);
+}
+.inputMain{
+    display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  color: var(--acd);
+}
