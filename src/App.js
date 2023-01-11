@@ -10,17 +10,22 @@ import Admin from "./pages/Admin";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Login } from "./components/Login";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const token = localStorage.getItem("token");
 
-  let userlginstatus = false;
+ const [userloginstatus , setUserloginstatus] = useState(false);
+ const adminloginstatus = false;
 
   const [yourDate, setYourDate] = useState(
     new Date().toISOString().split("T")[0]
   );
 
   const [data, setData] = useState();
+  useEffect(()=>{
+
+  },[HomePage])
 
   useEffect(() => {
     async function checkUserToken() {
@@ -31,11 +36,11 @@ function App() {
       });
       const data = await response.json();
       setData(data);
-      data.count?userlginstatus = true: userlginstatus = false;
-    }
+      data.count>-1?setUserloginstatus(true): setUserloginstatus(false);
+      };
+    
     checkUserToken();
-    console.log(token)
-  }, []);
+  }, [userloginstatus]);
 
   // useEffect(() => {
   //   async function getMatches() {
@@ -48,7 +53,8 @@ function App() {
   //   }
   //   getMatches();
   // }, []);
-  if (userlginstatus)
+
+  if (adminloginstatus)
     return (
       <Routes>
         <Route path="/" element={<Admin />}>
@@ -62,13 +68,16 @@ function App() {
     );
   return (
     <div className="App">
-      <Nav />
-      <Hero />
-      <Book date2={yourDate} books={data} setYourDate={setYourDate} />
-      <Profile />
-      <Reviews />
-      <Login />
-      <Signup />
+      <Routes>
+        <Route path="/" element={<HomePage loginstatus={userloginstatus} />}>
+          <Route path="/profile" element={<Profile />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/book" element={<Book date2={yourDate} books={data} setYourDate={setYourDate} />} />
+          <Route path="/signup" element={<Signup />}/>
+        </Route>
+      </Routes>
+    
+      
     </div>
   );
 }
